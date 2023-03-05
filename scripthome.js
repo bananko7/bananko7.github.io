@@ -25,5 +25,5 @@ function function1(){
   //    }, function(error) {
   //       console.log('FAILED...', error);
   //    });
-  window.location.replace("google.com");
+  window.location.replace("secondarypage.html");
 }
