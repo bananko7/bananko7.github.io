@@ -25,5 +25,6 @@ function function1(){
   //    }, function(error) {
   //       console.log('FAILED...', error);
   //    });
+  console.log(data);
   window.location.replace("secondarypage.html");
 }
