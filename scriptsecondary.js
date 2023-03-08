@@ -8,7 +8,7 @@ fetch('https://bananko7.github.io/cattcleaned.txt')
    .then(response => response.text())
    .then((data) => {
       //console.log(data);
-      examples = data.replace("\n", ",").split(",");
+      examples = data.split("@");
    });
 
 
