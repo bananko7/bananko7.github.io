@@ -32,6 +32,28 @@ function fn1(){
       grammar: grammar,
       clarity: clarity
    };
+   //clear radio buttons
+   var buttonfluency = document.getElementsByName("fluency");
+   var buttongrammar = document.getElementsByName("grammar");
+   var buttonclarity = document.getElementsByName("clarity");
+   for(var i=0;i<buttonfluency.length;i++)
+      buttonfluency[i].checked = false;
+      if(buttonfluency[3].checked == false){
+         buttonfluency[3].checked = true
+      }
+
+   for(var i=0;i<buttongrammar.length;i++)
+      buttongrammar[i].checked = false;
+      if(buttongrammar[3].checked == false){
+         buttongrammar[3].checked = true
+      }
+   for(var i=0;i<buttonclarity.length;i++)
+      buttonclarity[i].checked = false;
+      if(buttonclarity[3].checked == false){
+         buttonclarity[3].checked = true
+      }
+
+
    //emailjs.send('service_i8nk7oo', 'template1', templateParams)
    //   .then(function(response) {
    //      console.log(fluency,grammar,clarity,templateParams)
