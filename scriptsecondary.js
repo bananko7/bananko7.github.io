@@ -1,37 +1,43 @@
-
+console.clear()
 const button = document.getElementById("submit");
 button.addEventListener("click", fn1);
 
-examples = [];
-fetch('https://bananko7.github.io/cattcleaned.txt')
-//fetch('file:///E:/hons%20project/site/secondarypage.html')
+//load a random list of the 6 examples
+var listnumber = Math.floor(Math.random()*6 + 1);
+var listURL = "https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/listTXTs/list"+listnumber.toString()+"txt.txt";
+// Load examples
+var examples = [];
+console.log("URL = ",listURL)
+fetch(listURL)
+//fetch('https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/list1txt.txt')
+//fetch('https://github.com/bananko7/bananko7.github.io/blob/main/list1txt.txt')
    .then(response => response.text())
    .then((data) => {
       //console.log(data);
       examples = data.split("@");
    });
 
-
-//console.log(client.responseText);
-//client.send();
-
-function getrandomitem(examples){
-   const index = Math.floor(Math.random()*examples.length);
-   const item = examples[index];
-   return item;
+function loadnewitem(array){
+   
+   var item = array.pop();
+   //console.log(item)
+   var returnitem = item.slice(8)
+   return returnitem;
 }
 
 function fn1(){
-   // get form data
+   // get data from the form
    var fluency = document.querySelector('input[name="fluency"]:checked').value;
    var grammar = document.querySelector('input[name="grammar"]:checked').value;
    var clarity = document.querySelector('input[name="clarity"]:checked').value;
-   // send email
+   
+   // template object to pass to the email generating function
    var templateParams = {
       fluency: fluency,
       grammar: grammar,
       clarity: clarity
    };
+   
    //clear radio buttons
    var buttonfluency = document.getElementsByName("fluency");
    var buttongrammar = document.getElementsByName("grammar");
@@ -52,7 +58,7 @@ function fn1(){
       if(buttonclarity[3].checked == false){
          buttonclarity[3].checked = true
       }
-
+   //clear radio buttons end
 
    //emailjs.send('service_i8nk7oo', 'template1', templateParams)
    //   .then(function(response) {
@@ -61,8 +67,9 @@ function fn1(){
    //   }, function(error) {
    //      console.log('FAILED...', error);
    //   });
-   //loadnewexample(); 
-   var newtext = getrandomitem(examples);
+
+   //console.log(shuffledexamples)
+   var newtext = loadnewitem(examples);
    //var newtext = "<span style=\"background-color: #ffff00\">amsterdam airport schipol</span> serves <span style=\"background-color: #ffff00\">amsterdam</span>";
    console.log(newtext);
    document.getElementById('text_article').innerHTML = newtext;
