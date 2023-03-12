@@ -42,7 +42,7 @@ function clicked(){
       console.log("should be ","PLEASE WAIT. SENDING THE DATA ...");
       sendemail(globalfluency,globalgrammar,globalclarity);
    }
-   if(examples.lenth > 1){
+   if(examples.length > 1){
       generateresponse();
    }
 }
