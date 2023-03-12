@@ -28,14 +28,11 @@ function function1(){
     nativelanguage: nativelanguage,
     proficiency: proficiency
   };
-  console.log(data);
   emailjs.send('service_avefsxl', 'template_homepage', data)
       .then(function(response) {
-         console.log(data)
          console.log('SUCCESS!', response.status, response.text);
+         window.location.replace("secondarypage.html");
       }, function(error) {
          console.log('FAILED...', error);
-      });
-
-  window.location.replace("secondarypage.html");
+      }); 
 }

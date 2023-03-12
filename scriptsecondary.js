@@ -58,15 +58,14 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
    emailjs.send('service_i8nk7oo', 'template1', templateParams)
       .then(function(response) {
          //console.log(fluency,grammar,clarity,templateParams)
-         console.log('SUCCESS!', response.status, response.text);      
+         console.log('SUCCESS!', response.status, response.text);
+         console.log("EMAIL SENT with data:",templateParams)
+         document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">DATA SENT SUCCESSFULLY.</span>";
+         console.log("should be ","DATA SENT SUCCESSFULLY.")
+         window.location.replace("thankyou.html");     
       }, function(error) {
          console.log('FAILED...', error);
-         document.getElementById('text_article').innerHTML = 'pruc'
       });
-   console.log("EMAIL SENT with data:",templateParams)
-   document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">DATA SENT SUCCESSFULLY.</span>";
-   console.log("should be ","DATA SENT SUCCESSFULLY.")
-   window.location.replace("thankyou.html");
 }
 function generateresponse(){
 
