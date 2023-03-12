@@ -1,5 +1,5 @@
 
-console.clear()
+//console.clear()
 
 
 const button = document.getElementById("submit");
