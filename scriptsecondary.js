@@ -35,11 +35,12 @@ function loadnewitem(array){
 }
 
 function clicked(){
-   console.log("examples to show left:",examples.length-1)
+   //console.log("examples to show left:",examples.length-1)
 
    if(examples.length == 1){
+      button.disabled = true;
       document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">PLEASE WAIT. SENDING DATA...</span>"
-      console.log("should be ","PLEASE WAIT. SENDING THE DATA ...");
+      //console.log("should be ","PLEASE WAIT. SENDING THE DATA ...");
       sendemail(globalfluency,globalgrammar,globalclarity);
    }
    if(examples.length > 1){
@@ -62,7 +63,7 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
          console.log("EMAIL SENT with data:",templateParams)
          document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">DATA SENT SUCCESSFULLY.</span>";
          console.log("should be ","DATA SENT SUCCESSFULLY.")
-         window.location.replace("thankyou.html");     
+         window.location.replace("thankyou.html");
       }, function(error) {
          console.log('FAILED...', error);
       });
