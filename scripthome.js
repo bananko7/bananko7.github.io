@@ -29,7 +29,7 @@ function function1(){
     proficiency: proficiency
   };
   console.log(data);
-  emailjs.send('service_avefsxl', 'template_09gqeyk', data)
+  emailjs.send('service_avefsxl', 'template_homepage', data)
       .then(function(response) {
          console.log(data)
          console.log('SUCCESS!', response.status, response.text);
