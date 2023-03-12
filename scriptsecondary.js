@@ -18,7 +18,7 @@ var listnumber = Math.floor(Math.random()*6 + 1);
 var listURL = "https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/listTXTs/list"+listnumber.toString()+"txt.txt";
 // Load examples
 var examples = [];
-console.log("URL = ",listURL)
+//console.log("URL = ",listURL)
 fetch(listURL)
    .then(response => response.text())
    .then((data) => {
@@ -35,7 +35,7 @@ function loadnewitem(array){
 }
 
 function clicked(){
-   console.log("examples to show left:",examples.length-1)
+   //console.log("examples to show left:",examples.length-1)
    if(examples.length == 1){
       sendemail(globalfluency,globalgrammar,globalclarity)
    }
@@ -53,12 +53,12 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
    };
    emailjs.send('service_i8nk7oo', 'template1', templateParams)
       .then(function(response) {
-         console.log(fluency,grammar,clarity,templateParams)
-         console.log('SUCCESS!', response.status, response.text);
+         //console.log(fluency,grammar,clarity,templateParams)
+         //console.log('SUCCESS!', response.status, response.text);
       }, function(error) {
-         console.log('FAILED...', error);
+         //console.log('FAILED...', error);
       });
-   console.log(templateParams)
+   //console.log(templateParams)
    //var start = new Date().getTime();
    //var end = start;
    //while(end < start + 10000) {
