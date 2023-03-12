@@ -18,7 +18,7 @@ var listnumber = Math.floor(Math.random()*6 + 1);
 var listURL = "https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/listTXTs/list"+listnumber.toString()+"txt.txt";
 // Load examples
 var examples = [];
-//console.log("URL = ",listURL)
+console.log("URL = ",listURL)
 fetch(listURL)
    .then(response => response.text())
    .then((data) => {
