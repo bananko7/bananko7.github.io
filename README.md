@@ -1,4 +1,4 @@
-VISIT banankoresearch.com to start the survey!
+Visit banankoresearch.com to start the survey!
 
 
 # bananko7.github.io
