@@ -1,16 +1,25 @@
+
 console.clear()
+
+
 const button = document.getElementById("submit");
-button.addEventListener("click", fn1);
+button.addEventListener("click", clicked);
+
+
+var globalfluency = '';
+var globalgrammar = '';
+var globalclarity = '';
+
+
 
 //load a random list of the 6 examples
 var listnumber = Math.floor(Math.random()*6 + 1);
+
 var listURL = "https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/listTXTs/list"+listnumber.toString()+"txt.txt";
 // Load examples
 var examples = [];
 console.log("URL = ",listURL)
 fetch(listURL)
-//fetch('https://raw.githubusercontent.com/bananko7/bananko7.github.io/main/list1txt.txt')
-//fetch('https://github.com/bananko7/bananko7.github.io/blob/main/list1txt.txt')
    .then(response => response.text())
    .then((data) => {
       //console.log(data);
@@ -25,19 +34,54 @@ function loadnewitem(array){
    return returnitem;
 }
 
-function fn1(){
+function clicked(){
+   console.log("examples to show left:",examples.length-1)
+   if(examples.length == 1){
+      sendemail(globalfluency,globalgrammar,globalclarity)
+   }
+   else{
+      generateresponse()
+   }
+}
+function sendemail(globalfluency,globalgrammar,globalclarity){
+   // template object to pass to the email generating function
+   var templateParams = {
+      fluency: globalfluency,
+      grammar: globalgrammar,
+      clarity: globalclarity,
+      list: listnumber
+   };
+   emailjs.send('service_i8nk7oo', 'template1', templateParams)
+      .then(function(response) {
+         console.log(fluency,grammar,clarity,templateParams)
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+   console.log(templateParams)
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + 10000) {
+     end = new Date().getTime();
+  }
+   window.location.replace("thankyou.html");
+}
+function generateresponse(){
+
+
    // get data from the form
    var fluency = document.querySelector('input[name="fluency"]:checked').value;
    var grammar = document.querySelector('input[name="grammar"]:checked').value;
    var clarity = document.querySelector('input[name="clarity"]:checked').value;
+   console.log(typeof fluency)
+
+
+   globalfluency = globalfluency.concat(fluency);
+   globalgrammar = globalgrammar.concat(grammar);
+   globalclarity = globalclarity.concat(clarity);
    
-   // template object to pass to the email generating function
-   var templateParams = {
-      fluency: fluency,
-      grammar: grammar,
-      clarity: clarity
-   };
-   
+   console.log("saved response: ",fluency,grammar,clarity);
+
    //clear radio buttons
    var buttonfluency = document.getElementsByName("fluency");
    var buttongrammar = document.getElementsByName("grammar");
@@ -70,7 +114,5 @@ function fn1(){
 
    //console.log(shuffledexamples)
    var newtext = loadnewitem(examples);
-   //var newtext = "<span style=\"background-color: #ffff00\">amsterdam airport schipol</span> serves <span style=\"background-color: #ffff00\">amsterdam</span>";
-   console.log(newtext);
    document.getElementById('text_article').innerHTML = newtext;
 }
