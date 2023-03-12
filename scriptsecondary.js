@@ -54,9 +54,9 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
    emailjs.send('service_i8nk7oo', 'template1', templateParams)
       .then(function(response) {
          //console.log(fluency,grammar,clarity,templateParams)
-         //console.log('SUCCESS!', response.status, response.text);
+         console.log('SUCCESS!', response.status, response.text);
       }, function(error) {
-         //console.log('FAILED...', error);
+         console.log('FAILED...', error);
       });
    //console.log(templateParams)
    //var start = new Date().getTime();
@@ -73,14 +73,14 @@ function generateresponse(){
    var fluency = document.querySelector('input[name="fluency"]:checked').value;
    var grammar = document.querySelector('input[name="grammar"]:checked').value;
    var clarity = document.querySelector('input[name="clarity"]:checked').value;
-   console.log(typeof fluency)
+   //console.log(typeof fluency)
 
 
    globalfluency = globalfluency.concat(fluency);
    globalgrammar = globalgrammar.concat(grammar);
    globalclarity = globalclarity.concat(clarity);
    
-   console.log("saved response: ",fluency,grammar,clarity);
+   //console.log("saved response: ",fluency,grammar,clarity);
 
    //clear radio buttons
    var buttonfluency = document.getElementsByName("fluency");
