@@ -35,12 +35,15 @@ function loadnewitem(array){
 }
 
 function clicked(){
-   //console.log("examples to show left:",examples.length-1)
+   console.log("examples to show left:",examples.length-1)
+
    if(examples.length == 1){
-      sendemail(globalfluency,globalgrammar,globalclarity)
+      document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">PLEASE WAIT. SENDING DATA...</span>"
+      console.log("should be ","PLEASE WAIT. SENDING THE DATA ...");
+      sendemail(globalfluency,globalgrammar,globalclarity);
    }
-   else{
-      generateresponse()
+   if(examples.lenth > 1){
+      generateresponse();
    }
 }
 function sendemail(globalfluency,globalgrammar,globalclarity){
@@ -51,19 +54,18 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
       clarity: globalclarity,
       list: listnumber
    };
+   
    emailjs.send('service_i8nk7oo', 'template1', templateParams)
       .then(function(response) {
          //console.log(fluency,grammar,clarity,templateParams)
-         console.log('SUCCESS!', response.status, response.text);
+         console.log('SUCCESS!', response.status, response.text);      
       }, function(error) {
          console.log('FAILED...', error);
+         document.getElementById('text_article').innerHTML = 'pruc'
       });
-   //console.log(templateParams)
-   //var start = new Date().getTime();
-   //var end = start;
-   //while(end < start + 10000) {
-   //  end = new Date().getTime();
-   //}
+   console.log("EMAIL SENT with data:",templateParams)
+   document.getElementById('text_article').innerHTML = "<span style=\"background-color: #FFFF00\">DATA SENT SUCCESSFULLY.</span>";
+   console.log("should be ","DATA SENT SUCCESSFULLY.")
    window.location.replace("thankyou.html");
 }
 function generateresponse(){

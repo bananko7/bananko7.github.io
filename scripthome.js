@@ -36,10 +36,6 @@ function function1(){
       }, function(error) {
          console.log('FAILED...', error);
       });
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + 10000) {
-     end = new Date().getTime();
-   }
+
   window.location.replace("secondarypage.html");
 }
