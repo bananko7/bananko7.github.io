@@ -18,13 +18,13 @@ function function1(){
     nativelanguage: nativelanguage,
     proficiency: proficiency
   };
-  //emailjs.send('service_avefsxl', 'template_09gqeyk',data)
-  //    .then(function(response) {
-  //       console.log(data)
-  //       console.log('SUCCESS!', response.status, response.text);
-  //    }, function(error) {
-  //       console.log('FAILED...', error);
-  //    });
+  emailjs.send('service_avefsxl', 'template_09gqeyk',data)
+      .then(function(response) {
+         console.log(data)
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
   console.log(data);
   window.location.replace("secondarypage.html");
 }
