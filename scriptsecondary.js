@@ -59,11 +59,11 @@ function sendemail(globalfluency,globalgrammar,globalclarity){
          console.log('FAILED...', error);
       });
    console.log(templateParams)
-   var start = new Date().getTime();
-   var end = start;
-   while(end < start + 10000) {
-     end = new Date().getTime();
-  }
+   //var start = new Date().getTime();
+   //var end = start;
+   //while(end < start + 10000) {
+   //  end = new Date().getTime();
+   //}
    window.location.replace("thankyou.html");
 }
 function generateresponse(){
