@@ -2,9 +2,9 @@ const button = document.getElementById("iagree");
 button.addEventListener("click", function1);
 function function1(){
   //get form data
-  console.clear()
+  console.clear();
+  button.disabled = true;
   var name = document.getElementById("inputname").value;
- 
   var gender = document.getElementById("gender").value;
   var age = document.getElementById("age").value;
   var country = document.getElementById("country").value;
