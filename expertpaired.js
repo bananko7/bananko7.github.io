@@ -4,7 +4,7 @@ function load(){
     resultstring = 'ETP'; //expert Turing test Paired
     function loadexample(){
         console.log(resultstring)
-        var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*100)+1)+".txt";
+        var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*1000)+1)+".txt";
         console.log("URL = ",listURL)
         fetch(listURL)
         .then(response => response.text())
