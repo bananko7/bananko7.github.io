@@ -3,6 +3,7 @@ function load(){
     }
     resultstring = 'ETP'; //expert Turing test Paired
     function loadexample(){
+        console.log(resultstring)
         var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*100)+1)+".txt";
         console.log("URL = ",listURL)
         fetch(listURL)
@@ -11,16 +12,18 @@ function load(){
             //console.log(data);
             examples = data.split("<>");
             //console.log(examples);
-            document.getElementById('question').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[0]+"</span>";
-            document.getElementById('topic').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[3]+"</span>";
             if(Math.floor(Math.random() * 2)==0){
+                document.getElementById('question').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[0]+"</span>";
                 document.getElementById('answer1').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[2]+"</span>";
                 document.getElementById('answer2').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[1]+"</span>";
+                document.getElementById('topic').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[3]+"</span>";
                 flipped = true;
             }
             else{
+                document.getElementById('question').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[0]+"</span>";
                 document.getElementById('answer1').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[1]+"</span>";
                 document.getElementById('answer2').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[2]+"</span>";
+                document.getElementById('topic').innerHTML = "<span style=\"background-color: #EEEE00\">"+examples[3]+"</span>";
                 flipped = false;
             }
     });

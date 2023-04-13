@@ -3,6 +3,7 @@ loadexample()
 }
 resultstring = 'ETS';
 function loadexample(){
+    console.log(resultstring)
     var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*100)+1)+".txt";
     console.log("URL = ",listURL)
     fetch(listURL)
@@ -35,7 +36,7 @@ buttonsubmit.addEventListener("click",function(){
 button1 = document.getElementById("answer1button");
 button1.addEventListener("click",function(){
     console.log("button 1 clicked");
-    if (human == true){resultstring = resultstring + examples[3].substring(0, 1) + "2";}
+    if (human == true){resultstring = resultstring + examples[3].substring(0, 1) + "0";}
     else{resultstring = resultstring + examples[3].substring(0, 1) + "1";}
     loadexample();
 });
@@ -45,7 +46,7 @@ button2 = document.getElementById("answer2button");
 button2.addEventListener("click",function(){
     console.log("button 2 clicked")
     if(human == true){resultstring = resultstring + examples[3].substring(0, 1) + "1";}
-    else{resultstring = resultstring + examples[3].substring(0, 1) + "2";}
+    else{resultstring = resultstring + examples[3].substring(0, 1) + "0";}
     loadexample();
 });
 
