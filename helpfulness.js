@@ -1,7 +1,7 @@
 function load(){
     loadexample()
     }
-    resultstring = 'EHT'; //expert Turing test Paired
+    resultstring = 'EHT'; //expert helpfulness test
     function loadexample(){
         console.log(resultstring)
         var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*1000)+1)+".txt";
