@@ -1,7 +1,7 @@
 function load(){
     loadexample()
     }
-    resultstring = 'ETS';
+    resultstring = 'ATS';
     function loadexample(){
         console.log(resultstring)
         var listURL = "https://raw.githubusercontent.com/bananko7/HC3database/main/"+String(Math.floor(Math.random()*100)+1)+".txt";
