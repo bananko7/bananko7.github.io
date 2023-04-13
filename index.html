@@ -2,32 +2,35 @@
 <html>
 
 <body>
-    <p><strong>Do you consider yourself a beginner ChatGPT user or an advanced one?</strong></p>
-    <p><strong>Do you want to do a Turing test or a Helpfulness test?</strong></p>
+    <p><strong>Do you consider yourself an expert ChatGPT user or an amateur one?</strong></p>
+    <p>An amateur is someone who has not used(or barely used) ChatGPT.</p>
+    <p>An expert is someone who has used ChatGPT, as they've probably memorised patterns in ChatGPT's behaviour.</p>
     <p><strong>A turing test is a test of a machine's(in this case, ChatGPT) ability to exhibit 'intelligent' behaviour indistinguishable from that of a human.</strong></p>
-    <p><strong>A </p>
-    <button id="ButtonBeginnerTuring" class="float-left submit-button">Beginner Turing test</button>
-    <button id="ButtonAdvancedTuring" class="float-left submit-button">Advanced Turing test</button>
-    <p></p>
-    <button id="ButtonBeginnerHelpfulness" class="float-left submit-button">Beginner Helpfulness test</button>
-    <button id="ButtonAdvancedHelpfulness" class="float-left submit-button">Advanced Helpfulness test</button>
+    <p>Expert users please do a few(as many as you want) examples of each if you choose to do the Turing test:</p>
+    <button id="ExpertTuringTestPaired" class="float-left submit-button">Expert Turing test paired texts</button>
+    <button id="ExpertTuringTestSingle" class="float-left submit-button">Expert Turing test single text</button>
     <br><br>
-    <p>This is a <strong>replication</strong> of a human evaluation experiment on data from a natural language model(ChatGPT) that I found in a scientific paper</p>
-    <p><strong><a href="https://arxiv.org/pdf/2301.07597v1.pdf" target=”_blank”>Here</a></strong>'s a link to the original paper</p>
+    <button id="ButtonBeginnerHelpfulness" class="float-left submit-button">Amateur Turing test single text</button>
+    <br><br>
+    <p>In the helpfulness test, you will be asked to rate a response on a scale from 1 to 5:</p>
+    <button id="ButtonHelpfulness" class="float-left submit-button">Helpfulness test</button>
+    <br><br>
+    <p>This is a <strong>replication</strong> of a human evaluation experiment on data from a natural language model(ChatGPT) that I found in a scientific paper.</p>
+    <p><strong><a href="https://arxiv.org/pdf/2301.07597v1.pdf" target=”_blank”>Here</a></strong>'s a link to the original paper.</p>
     <p>A huge thank you to the original authors of the paper.</p>
     <p>Please ignore any extra slashes, quotation marks and questionable punctuation.</p>
     <script type="text/javascript">
-        document.getElementById("ButtonBeginnerTuring").onclick = function () {
-            location.href = "D:/hons project/SECOND/HC3 dataset/beginnerturing.html";
+        document.getElementById("ExpertTuringTestPaired").onclick = function () {
+            location.href = "D:/hons project/SECOND/HC3 dataset/expertturingtestpaired.html";
         };
-        document.getElementById("ButtonAdvancedTuring").onclick = function () {
-            location.href = "D:/hons project/SECOND/HC3 dataset/advancedturing.html";
+        document.getElementById("ExpertTuringTestSingle").onclick = function () {
+            location.href = "D:/hons project/SECOND/HC3 dataset/expertturingtestsingle.html";
         };
         document.getElementById("ButtonBeginnerHelpfulness").onclick = function () {
-            location.href = "D:/hons project/SECOND/HC3 dataset/beginnerhelpfulness.html";
+            location.href = "D:/hons project/SECOND/HC3 dataset/amateurturingtest.html";
         };
-        document.getElementById("ButtonAdvancedHelpfulness").onclick = function () {
-            location.href = "D:/hons project/SECOND/HC3 dataset/advancedhelpfulness.html";
+        document.getElementById("ButtonHelpfulness").onclick = function () {
+            location.href = "D:/hons project/SECOND/HC3 dataset/helpfulness.html";
         };
     </script>
 </body>
