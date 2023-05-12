@@ -8,7 +8,7 @@
 #
 #
 import os
-def cls():                                          #this is a function that clears the console, I used it for cleaner debugging, it wes crucial to an earlier 
+def cls():                                          #this is a function that clears the console, I used it for cleaner debugging, it was crucial to an earlier 
     os.system('cls' if os.name=='nt' else 'clear')  #version  of the code during which I was planning to manually clean the database from invalid examples
 
 def generateexample():
