@@ -24,6 +24,16 @@ class questionanswer:
         self.answerHUMAN = answerHUMAN
         self.answerCGPT = answerCGPT[1:]
         self.topic = topic
+        if topic == 'reddit_eli5':
+            self.topicindex = 0
+        if topic == 'medicine':
+            self.topicindex = 1
+        if topic == 'finance':
+            self.topicindex = 2
+        if topic == 'open_qa':
+            self.topicindex = 3
+        if topic == 'wiki_csai':
+            self.topicindex = 4
 def generatequestionlist():
 
     questionslist = []
@@ -49,6 +59,8 @@ if __name__ == "__main__":
     while counter<=1000:
         questionslisttest = generatequestionlist()
         currentquestion = random.choice(questionslisttest)
+        while currentquestion.topicindex != counter%5:
+            currentquestion = random.choice(questionslisttest)
         cls()
         print("This is the question:")
         print(currentquestion.question)
@@ -61,7 +73,7 @@ if __name__ == "__main__":
         #save = input("save or not?")                          # filter database mode
         save = 'y'
         if save == 'y':
-            examplefile = open('D:/hons project/SECOND/HC3 dataset/newexamples/'+str(counter)+'.txt','w',encoding = 'utf-8')
+            examplefile = open('D:/hons project/SECOND/HC3 dataset/newexamplesEQUAL/'+str(counter)+'.txt','w',encoding = 'utf-8') # newexamplesEQUAL is the new equally distributed 1000 entry database sample that I generate
             examplefile.write(currentquestion.question+"<>"+currentquestion.answerHUMAN.split("\",\"")[0]+"<>"+currentquestion.answerCGPT+"<>"+currentquestion.topic)
             examplefile.close()
             counter += 1
