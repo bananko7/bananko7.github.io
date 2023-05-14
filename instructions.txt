@@ -1,0 +1,18 @@
+THIS PROJECT IS PROBABLY STILL ONLINE YOU CAN CHECK IT OUT AT:
+bananko7.github.io
+
+These are instructions on how to replicate my experiment.
+Firstly, you need an idea of what the original experiment was like.
+This can be seen on 'https://arxiv.org/pdf/2301.07597v1.pdf'
+To get the site online, you need to use GitHub pages. 
+'https://docs.github.com/en/pages/quickstart'
+You can copy all of my HTML and JS code. 
+Some tweaking on how the files relate to and open each other may be needed to get going.
+If you want to generate new test data, you can use the python code in the 
+'generateminidatabase' folder. Otherwise, you can access it from my repositories directly:
+'https://github.com/bananko7/HC3database' for the dataset that I used (unequally distributed though)
+'https://github.com/bananko7/HC3databaseEQUAL' for a better distributed dataset
+You will need to set up an EmailJS account and then set up the email functionality
+in order to get the results. This can be done easily and for free on 'https://www.emailjs.com'
+When you collect your data, you can evaluate it with the files in the statistics folder.
+If you have any questions, contact me by email: 'oknanab7@gmail.com'
